@@ -35,12 +35,11 @@ jobs:
           libc6-dev 
           libcurl4 
           libedit2 
-          libgcc-9-dev 
+          libgcc-5-dev 
           libpython2.7 
           libsqlite3-0 
-          libstdc++-9-dev 
+          libstdc++-5-dev 
           libxml2 
-          libz3-dev 
           lsb-release 
           ninja-build 
           pkg-config 
