@@ -52,7 +52,7 @@ jobs:
       - name: Test Plugin
         uses: asdf-vm/actions/plugin-test@v1
         with:
-          command: swiftenv local ${{ matrix.swift-version }} && swift --version
+          command: asdf install swift ${{ matrix.swift-version }} && swift --version
           version: ${{ matrix.swift-version }}
 
   plugin-test-macos:
@@ -72,5 +72,5 @@ jobs:
       - name: Test Plugin
         uses: asdf-vm/actions/plugin-test@v1
         with:
-          command: swiftenv local ${{ matrix.swift-version }} && swift --version
+          command: asdf install swift ${{ matrix.swift-version }} && swift --version
           version: ${{ matrix.swift-version }}
