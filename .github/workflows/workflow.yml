@@ -41,6 +41,7 @@ jobs:
           libstdc++-9-dev 
           libxml2 
           libz3-dev 
+          lsb-release 
           ninja-build 
           pkg-config 
           tzdata 
