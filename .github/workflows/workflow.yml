@@ -5,13 +5,55 @@ on:
   push:
 
 jobs:
-  plugin_test:
+  plugin-test-docker:
     strategy:
-      fail-fast: false
+      matrix:
+        container:
+          - ubuntu:latest
+        swift-version:
+          - 2.2
+          - 3.1
+          - 4.2
+          - 5.3
+
+    env:
+      DEBIAN_FRONTEND: noninteractive
+
+    container:
+      image: ${{ matrix.container }}
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Install packages
+        run: apt-get update && apt-get install -y \ 
+          binutils \
+          git \
+          gnupg2 \
+          libc6-dev \
+          libcurl4 \
+          libedit2 \
+          libgcc-9-dev \
+          libpython2.7 \
+          libsqlite3-0 \
+          libstdc++-9-dev \
+          libxml2 \
+          libz3-dev \
+          pkg-config \
+          tzdata \
+          zlib1g-dev
+
+      - name: Test Plugin
+        uses: asdf-vm/actions/plugin-test@v1
+        with:
+          command: swift --version
+          version: ${{ matrix.swift-version }}
+
+  plugin-test-macos:
+    strategy:
       matrix:
         os:
           - macos-latest
-          - ubuntu-latest
         swift-version:
           - 2.2
           - 3.1
