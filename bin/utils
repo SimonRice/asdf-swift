@@ -29,7 +29,7 @@ ninja_dir() {
 }
 
 ensure_ninja_installed() {
-  if [ ! -f "$(ninja_path)" ]; then
+  if [ ! -f "$(ninja_path)" ] && [ ! -f "$(which ninja)" ]; then
     ensure_swiftenv_installed
     download_ninja
   fi
