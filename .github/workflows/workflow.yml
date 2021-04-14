@@ -29,7 +29,7 @@ jobs:
         uses: asdf-vm/actions/plugin-test@v1
         with:
           command: swift --version
-          version: ${{ matrix.php-version }}
+          version: ${{ matrix.swift-version }}
 
   plugin-test-vm:
     strategy:
@@ -49,4 +49,4 @@ jobs:
         uses: asdf-vm/actions/plugin-test@v1
         with:
           command: swift --version
-          version: ${{ matrix.php-version }}
+          version: ${{ matrix.swift-version }}
