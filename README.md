@@ -1,5 +1,5 @@
 # asdf-swift
-[![Build Status](https://travis-ci.org/fcrespo82/asdf-swift.svg?branch=master)](https://travis-ci.org/fcrespo82/asdf-swift)
+[![Build Status](https://github.com/fcrespo82/asdf-swift/workflows/Main%20workflow/badge.svg?branch=master)](https://github.com/fcrespo82/asdf-swift/actions)
 
 Swift plugin for https://github.com/asdf-vm/asdf/
 
