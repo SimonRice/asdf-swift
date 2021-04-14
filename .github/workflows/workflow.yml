@@ -5,37 +5,13 @@ on:
   push:
 
 jobs:
-  plugin-test-docker:
+  plugin_test:
     strategy:
-      matrix:
-        container:
-          - ubuntu:latest
-        swift-version:
-          - 2.2
-          - 3.1
-          - 4.2
-          - 5.3
-
-    env:
-      DEBIAN_FRONTEND: noninteractive
-
-    container:
-      image: ${{ matrix.container }}
-
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Test Plugin
-        uses: asdf-vm/actions/plugin-test@v1
-        with:
-          command: swift --version
-          version: ${{ matrix.swift-version }}
-
-  plugin-test-vm:
-    strategy:
+      fail-fast: false
       matrix:
         os:
           - macos-latest
+          - ubuntu-latest
         swift-version:
           - 2.2
           - 3.1
