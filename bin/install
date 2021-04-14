@@ -12,7 +12,7 @@ install_swift() {
   ensure_ninja_installed
 
   ASDF_CONCURRENCY="${ASDF_CONCURRENCY:-1}"
-  echo "swiftenv install $version $install_path"
+  echo "swiftenv install --verbose $version $install_path"
   MAKE_OPTS="$MAKE_OPTS -j$ASDF_CONCURRENCY" TMP_DIR="$tmp_dir" SWIFTENV_ROOT="$install_path" $(swiftenv_path) install $version
   echo "Cleaning up"
   rm -rf "$tmp_dir"
